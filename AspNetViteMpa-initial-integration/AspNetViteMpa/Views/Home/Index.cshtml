@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<environment include="Development">
+    <script type="module" src="~/src/main.ts"></script>  
+</environment>
+
+<environment include="Production">
+    @section Styles {
+        <link rel="stylesheet" asp-href-include="/vite-client/assets/index-*.css">
+    }
+    @section Scripts {
+        <script asp-src-include="/vite-client/assets/index-*.js"></script>
+    }
+</environment>
+
+<div id="app"></div>
